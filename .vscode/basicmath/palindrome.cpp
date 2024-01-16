@@ -32,7 +32,6 @@ int main(){
       cout<<m;
     }
     else cout<<m;
- 
 
 }
 
