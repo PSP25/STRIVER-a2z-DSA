@@ -1,25 +1,30 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main(){
-    int n;
-    cin>>n;
-    int arr[n];
-    for (int i = 0; i < n; i++)
+void char_hash()
+{
+    string str = "abcdabegc";
+    // pre_compute
+    int hash[26] = {0};
+    for (int i = 0; i < str.size(); i++)
     {
-        cin>>arr[i];
-        cout<<arr[i];
+        hash[str[i] - 'a'] += 1;
+        // if you take hash[256]
+        // you dont need to take str[i]-'a'
+        // str[i] would do the needful
     }
-//hash
-    // int hashno;
-    // cin>>hashno;
-//precomputer
-        int hash[4]={0};
-          for(int i=0;i<4;i++){
-                  hash[arr[i]]+=1;
-        }
-         for(int j=0;j<4;j++){
-          cout<<endl<<hash[j]<<" ";
-        }
-        
-                return 0;
+    // fetch
+    int q;
+    cin >> q;
+    while (q--)
+    {
+        char j;
+        cin >> j;
+        cout << hash[j - 'a'] << endl; // if you take hash[256]
+                                       // hash[j]would do
+    }
+}
+int main()
+{
+    char_hash();
+    return 0;
 }
