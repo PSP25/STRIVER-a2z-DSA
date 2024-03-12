@@ -1,6 +1,6 @@
 // Recursive C++ program to find minimum 
 
-#include <iostream> 
+#include <bits/stdc++.h> 
 using namespace std; 
 
 // function to print Minimum element using recursion 
