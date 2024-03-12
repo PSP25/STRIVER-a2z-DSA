@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<vector<int>> fun(int arr[], int index, vector<int> &temp, int n, int k, int &sum, vector<vector<int>> &ans)
+void fun(int arr[], int index, vector<int> &temp, int n, int k, int &sum, vector<vector<int>> &ans)
 {   
     if (index == n)
     {
@@ -33,6 +33,6 @@ int main()
     vector<int> arr2;
     int sum=0;
     vector<vector<int>> ans;
-    ans=fun(arr, 0, arr2, 3, 3 , sum, ans);
+    fun(arr, 0, arr2, 3, 3 , sum, ans);
     return 0;
 }
