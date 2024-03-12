@@ -1,0 +1,69 @@
+//    q.no 1171
+
+
+                //my solution
+// ListNode* removeZeroSumSublists(ListNode* head) {
+//         unordered_map<int, ListNode*> mp;
+//         ListNode* temp = head;
+//         int sum = 0;
+//         mp.insert({0, nullptr});
+//         while (temp != nullptr) {
+//             // ListNode* ptr=head;
+//             sum += temp->val;
+//             if (sum == 0) {
+//                 head = temp->next;
+//                 temp = head;
+//                 mp.clear();
+//                 mp.insert({0, nullptr});
+//                 sum = 0;
+//             } else if (mp.find(sum) != mp.end()) {
+//                 mp[sum]->next = temp->next;
+//                 mp.clear();
+//                 mp.insert({0, nullptr});
+//                 sum = 0;
+//                 temp = head;
+//             } else {
+//                 mp.insert({sum, temp});
+//                 temp = temp->next;
+//             }
+//         }
+//         return head;
+//     }
+// };
+
+                        //better solution
+// void sanatizemap(ListNode*head,unordered_map<int,ListNode*>&mp,int csum){
+//         int temp = csum ;
+//         while(true){
+//             temp += head-> val;
+//             if(temp== csum) break;
+//             mp.erase(temp);
+//             head=head->next;
+//         }
+//     }
+
+//     ListNode* removeZeroSumSublists(ListNode* head) {
+//         if(head==NULL || head->next==NULL && head->val==0) return 0;
+        
+//         unordered_map<int,ListNode*>mp;
+//         auto it = head;
+//         int csum = 0;
+//         while(it){
+//             csum += it->val;
+//             if(csum == 0 ){
+//                 head= it->next;
+//                 mp.clear();
+//             }
+//             else if(mp.find(csum)!= mp.end()){
+//                 sanatizemap(mp[csum]->next,mp,csum);
+//                 mp[csum]->next = it->next;
+//             }
+//             else
+//                 mp[csum] =it;
+//                 it = it->next;
+            
+            
+//         }
+
+// return head; 
+//     }
